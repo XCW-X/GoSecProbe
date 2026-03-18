@@ -1,0 +1,120 @@
+@import './custom.less';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  background-color: var(--bg-primary);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+// 渗透安全工程师风格登录背景
+:root {
+  --login-bg-gradient: linear-gradient(135deg, #0a0e14 0%, #0f1419 50%, #151b22 100%);
+}
+
+html[arco-theme='dark'],
+body[arco-theme='dark'],
+body.arco-dark {
+  background-color: var(--bg-primary) !important;
+  --login-bg-gradient: linear-gradient(135deg, #0a0e14 0%, #0f1419 50%, #151b22 100%) !important;
+}
+
+// 矩阵数字雨背景效果
+.matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.05;
+}
+
+.general-card {
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+
+  & > .arco-card-header {
+    height: auto;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  & > .arco-card-body {
+    padding: 0 20px 20px 20px;
+  }
+}
+
+.split-line {
+  border-color: var(--border-color);
+}
+
+.arco-table-cell {
+  .circle {
+    display: inline-block;
+    margin-right: 4px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+
+    &.pass {
+      background-color: var(--secondary-color);
+    }
+  }
+}
+
+// 终端风格文本
+.terminal-text {
+  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+  letter-spacing: 0.5px;
+}
+
+// 代码块样式
+.code-block {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 16px;
+  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+  font-size: 13px;
+  overflow-x: auto;
+  color: var(--primary-color);
+}
+
+// 扫描状态指示器
+.scan-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    animation: pulse 1.5s infinite;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}

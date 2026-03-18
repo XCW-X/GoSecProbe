@@ -1,0 +1,210 @@
+// 渗透安全工程师专属配色方案
+:root {
+  // 主色调 - 黑客绿
+  --primary-color: #00ff88;
+  --primary-color-hover: #00cc6a;
+  --primary-color-light: #1a402d;
+  
+  // 辅助色 - 科技蓝
+  --secondary-color: #0088ff;
+  --secondary-color-hover: #0066cc;
+  
+  // 警告色 - 警告红
+  --danger-color: #ff3366;
+  --danger-color-hover: #cc2952;
+  
+  // 背景色
+  --bg-primary: #0a0e14;
+  --bg-secondary: #0f1419;
+  --bg-tertiary: #151b22;
+  --bg-card: #1a2129;
+  
+  // 边框色
+  --border-color: #232a31;
+  --border-color-light: #2d353d;
+  
+  // 文本色
+  --text-primary: #e6e6e6;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  
+  // 菜单样式
+  --color-menu-dark-bg: var(--bg-secondary);
+  --color-menu-dark-hover: var(--primary-color-light);
+}
+
+html[arco-theme='dark'],
+body[arco-theme='dark'],
+body.arco-dark {
+  background-color: var(--bg-primary) !important;
+}
+
+// 全局基础样式
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace, system-ui, -apple-system, sans-serif;
+}
+
+// Arco Design 主题覆盖
+.arco-btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #0a0e14 !important;
+  font-weight: 600;
+  
+  &:hover {
+    background-color: var(--primary-color-hover) !important;
+    border-color: var(--primary-color-hover) !important;
+  }
+}
+
+.arco-card {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+  border-radius: 8px;
+  
+  .arco-card-header {
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+  }
+}
+
+.arco-table {
+  background-color: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  
+  .arco-table-th {
+    background-color: var(--bg-tertiary) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-secondary) !important;
+  }
+  
+  .arco-table-td {
+    border-color: var(--border-color) !important;
+  }
+  
+  .arco-table-tr:hover .arco-table-td {
+    background-color: var(--bg-tertiary) !important;
+  }
+}
+
+.arco-input,
+.arco-select {
+  background-color: var(--bg-tertiary) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+  
+  &:hover {
+    border-color: var(--border-color-light) !important;
+  }
+  
+  &.arco-input-focus,
+  &.arco-select-focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.2) !important;
+  }
+}
+
+.arco-menu-dark {
+  background-color: var(--bg-secondary) !important;
+  
+  .arco-menu-item,
+  .arco-menu-group-title,
+  .arco-menu-pop-header,
+  .arco-menu-inline-header {
+    color: var(--text-secondary) !important;
+    
+    * {
+      color: var(--text-secondary) !important;
+    }
+  }
+  
+  .arco-menu-item:hover,
+  .arco-menu-inline-header:hover {
+    background-color: var(--primary-color-light) !important;
+    color: var(--primary-color) !important;
+    
+    * {
+      color: var(--primary-color) !important;
+    }
+  }
+  
+  .arco-menu-item.arco-menu-selected,
+  .arco-menu-inline-header.arco-menu-selected {
+    background-color: rgba(0, 255, 136, 0.05) !important;
+    color: var(--primary-color) !important;
+    border-right: 2px solid var(--primary-color);
+    
+    * {
+      color: var(--primary-color) !important;
+    }
+  }
+  
+  .arco-menu-vertical {
+    .arco-menu-inline-header {
+      line-height: 48px;
+    }
+  }
+}
+
+.arco-tag {
+  border-radius: 4px !important;
+  font-weight: 500;
+}
+
+// 自定义工具类
+.glow-text {
+  text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+}
+
+.glow-border {
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.scan-line {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 255, 136, 0.1),
+      transparent
+    );
+    animation: scan 3s infinite;
+  }
+}
+
+@keyframes scan {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  background-color: var(--primary-color);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}

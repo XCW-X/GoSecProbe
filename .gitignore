@@ -1,0 +1,39 @@
+# Node.js
+node_modules
+.DS_Store
+*.local
+*.history
+
+# Frontend
+dist
+dist-ssr
+
+# Backend
+logs
+R.md
+uploads/dict/
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+go.work
+go.work.sum
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+
+# POC Templates
+GoSecProbe-Api/service/lib/templates/
+
