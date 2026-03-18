@@ -1,8 +1,6 @@
 <h1 align="center">GoSecProbe</h1>
 
-<p align="center">
-  <img src="images/logo.png" width="180" alt="GoSecProbe Logo">
-</p>
+
 
 <p align="center">
   <strong>Go 开发的高级网络安全扫描分析平台</strong>
